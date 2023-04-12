@@ -89,8 +89,8 @@ function createMouseEvent(type, previousEvent) {
 module.exports = function(Chart) {
 	var chartHelpers = Chart.helpers;
 
-	function initConfig(config) {
-		config = chartHelpers.configMerge(Chart.Annotation.defaults, origConfig);
+	function initConfig(origConfig) {
+		var config = chartHelpers.configMerge(Chart.Annotation.defaults, origConfig);
 		if(origConfig.annotations)
 			config.annotations = origConfig.annotations;
 		if (chartHelpers.isArray(config.annotations)) {
